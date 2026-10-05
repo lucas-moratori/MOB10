@@ -1,0 +1,182 @@
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .header {
+            background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+            border-radius: 20px 20px 0 0;
+            padding: 35px 30px 25px;
+            text-align: center;
+        }
+
+        .header .icon { font-size: 3rem; display: block; margin-bottom: 5px; }
+        .header h1 { font-size: 2rem; font-weight: 800; }
+        .header p { opacity: 0.85; font-size: 1rem; margin-top: 5px; font-weight: 500; }
+
+        .badge-group {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            justify-content: center; margin-top: 12px;
+        }
+
+        .badge {
+            background: rgba(0, 0, 0, 0.12);
+            padding: 4px 14px; border-radius: 30px;
+            font-size: 0.7rem; font-weight: 600;
+        }
+
+        .content {
+            background: white;
+            border-radius: 0 0 20px 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .intro {
+            color: #2c3e50; font-size: 0.95rem; line-height: 1.7;
+            margin-bottom: 25px; padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0; text-align: center;
+        }
+
+        .intro strong { color: #b8860b; }
+
+        /* ===== ABAS ===== */
+        .tabs {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            margin-bottom: 20px; justify-content: center;
+        }
+
+        .tab {
+            background: #f8f9fa; border: 2px solid #e9ecef;
+            padding: 10px 18px; border-radius: 30px;
+            cursor: pointer; font-size: 0.85rem; font-weight: 600;
+            transition: all 0.25s ease; color: #1a1a2e;
+        }
+
+        .tab:hover { border-color: #f7971e; background: #fffbf5; }
+
+        .tab.ativa {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            border-color: #f7971e;
+        }
+
+        /* ===== PAINÉIS ===== */
+        .painel { display: none; }
+        .painel.ativo { display: block; animation: fade 0.3s ease; }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .painel h2 {
+            font-size: 1.3rem; margin-bottom: 6px;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        .painel .descricao {
+            font-size: 0.85rem; color: #6c757d;
+            line-height: 1.6; margin-bottom: 18px;
+        }
+
+        .painel .descricao code {
+            background: #f1f3f5; padding: 1px 6px;
+            border-radius: 5px; font-size: 0.8rem;
+            color: #b8860b;
+        }
+
+        /* ===== ÁREA DE JOGO ===== */
+        .area-jogo {
+            display: flex; flex-wrap: wrap;
+            gap: 20px; align-items: flex-start;
+        }
+
+        .controles {
+            background: #f8f9fa; border-radius: 14px;
+            padding: 18px; border: 2px solid #e9ecef;
+            flex: 1; min-width: 240px;
+        }
+
+        .controles h3 {
+            font-size: 0.95rem; margin-bottom: 12px;
+            color: #b8860b;
+        }
+
+        .controles label {
+            display: block; font-size: 0.8rem;
+            margin-bottom: 6px; color: #495057;
+            font-weight: 600;
+        }
+
+        .controles input, .controles select {
+            width: 100%; padding: 8px;
+            border: 2px solid #e9ecef; border-radius: 8px;
+            margin-bottom: 12px; font-size: 0.85rem;
+            font-family: inherit;
+        }
+
+        .controles button {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            border: none; padding: 10px 18px;
+            border-radius: 10px; cursor: pointer;
+            font-weight: 700; font-size: 0.85rem;
+            transition: transform 0.15s;
+            width: 100%; margin-bottom: 8px;
+            font-family: inherit;
+        }
+
+        .controles button:hover { transform: scale(1.02); }
+        .controles button:active { transform: scale(0.98); }
+
+        .controles button.secundario {
+            background: #e9ecef; color: #495057;
+        }
+
+        .status {
+            font-size: 0.8rem; color: #495057;
+            background: white; padding: 10px 12px;
+            border-radius: 8px; margin-top: 8px;
+            border: 1px solid #e9ecef;
+            font-family: 'Consolas', monospace;
+            line-height: 1.5;
+        }
+
+        canvas {
+            background: #1a1a2e;
+            border-radius: 14px;
+            border: 3px solid #e9ecef;
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== DICAS DE CÓDIGO ===== */
+        .dicas {
+            background: #fffbf5; border-left: 4px solid #f7971e;
+            padding: 14px 18px; border-radius: 8px;
+            margin-top: 20px; font-size: 0.8rem;
+            line-height: 1.6; color: #495057;
+        }
+
+        .dicas strong { color: #b8860b; }
+
+        .footer {
+            text-align: center; padding: 18px 0 5px;
+            color: #6c757d; font-size: 0.75rem;
+            border-top: 1px solid #f0f0f0; margin-top: 25px;
+        }
+
+        @media (max-width: 640px) {
+            .header h1 { font-size: 1.4rem; }
+            .header .icon { font-size: 2.2rem; }
+            .content { padding: 20px 16px; }
+            .tab { padding: 8px 14px; font-size: 0.75rem; }
+            .painel h2 { font-size: 1.1rem; }
+        }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="painel ativo" id="snake">
+            <h2>&#128013; Jogo Snake</h2>
+            <p class="descricao">
+                Cl&aacute;ssico jogo da cobrinha. Use as <strong>setas do teclado</strong>
+                para mover, coma a ma&ccedil;&atilde; e cres&ccedil;a.
+            </p>
+
+            <div class="area-jogo">
+                <canvas id="telaSnake" width="400" height="400"></canvas>
+
+                <div class="controles">
+                    <h3>Controles</h3>
+                    <button onclick="iniciarSnake()">&#9654;&#65039; Iniciar / Reiniciar</button>
+                    <button class="secundario" onclick="pausarSnake()">&#9208;&#65039; Pausar</button>
+
+                    <div class="status" id="statusSnake">
+                        Pontos: 0<br>Estado: parado
+                    </div>
+
+                    <div class="dicas" style="margin-top:14px;">
+                        <strong>Como funciona:</strong>
+                        <br>&bull; A cobra &eacute; um array de posi&ccedil;&otilde;es
+                        <br>&bull; A cada tick, adiciona nova cabe&ccedil;a
+                        <br>&bull; Se n&atilde;o comeu, remove a cauda
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="script.js"></script>
+</html>
